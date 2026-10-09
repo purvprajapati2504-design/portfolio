@@ -5,6 +5,7 @@ import {
   ArrowRight,
   BadgeCheck,
   BookOpen,
+  Bot,
   BriefcaseBusiness,
   Brain,
   Code2,
@@ -51,7 +52,16 @@ const skills = [
 
 const projects = [
   {
+    title: "AI Mock Interview",
+    subtitle: "AI Interview Platform",
+    icon: <Bot className="h-5 w-5" />,
+    description:
+      "An online platform for users to practice real interviews with instant evaluation, scoring, and actionable results.",
+    tags: ["AI Platform", "Mock Interview", "Instant Evaluation", "Feedback System"],
+  },
+  {
     title: "Online Game Store",
+    subtitle: "Featured Web Project",
     icon: <Globe className="h-5 w-5" />,
     description:
       "A web-based store concept for purchasing games, managing wishlists, and supporting multiple payment flows.",
@@ -59,6 +69,7 @@ const projects = [
   },
   {
     title: "Integrated AI System",
+    subtitle: "Featured Academic Project",
     icon: <Brain className="h-5 w-5" />,
     description:
       "An academic project focused on face detection, image classification, and voice recognition.",
@@ -242,7 +253,7 @@ export default function Page() {
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {[
-                { label: "Projects", value: "2+" },
+                { label: "Projects", value: `${projects.length}+` },
                 { label: "Certifications", value: `${certifications.length}+` },
                 { label: "Languages", value: "3" },
               ].map((item) => (
@@ -405,7 +416,7 @@ export default function Page() {
             <h3 className="text-2xl font-bold">Project Experience</h3>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <motion.article
                 key={project.title}
@@ -423,7 +434,7 @@ export default function Page() {
                     <div>
                       <h4 className="text-xl font-bold">{project.title}</h4>
                       <p className="text-sm text-white/50">
-                        Featured Academic Project
+                        {project.subtitle}
                       </p>
                     </div>
                   </div>
